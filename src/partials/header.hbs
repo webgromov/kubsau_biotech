@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ htmlWebpackPlugin.options.title }}</title>
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader__logo">
+      <img src="assets/img/logo.svg" alt="">
+    </div>
+  </div>
+  <div id="cursor" class="cursor"></div>
+  <section class="cap" id="cap">
+      <nav id="cap__nav" class="cap__nav">
+        <a href="#" class="logo">
+          <img src="assets/img/logo.svg" alt="">
+        </a>
+          <ul>
+            <li><a class="active" href="#">Каталог</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги центра</a></li>
+            <li><a href="#">Документы</a></li>
+            <li><a href="#">Публикации</a></li>
+            <li><a href="#">Новости</a></li>
+          </ul>
+        <div class="cap__nav__search">
+          <img class="search-icon" src="assets/img/search.svg" class="search__icon" alt="">
+          <input class="inp" placeholder="Поиск по сайту" type="search">
+        </div>
+      </nav>
+  </section>
+  <header id="scene" data-depth="0.2" class="header">
+    <div class="header__info">
+        <h1 class="header__title">Каталог микроорганизмов</h1>
+        <p class="header__desc">Программа приоритета 2030, совместно с КубГАУ</p>
+        <a href="" class="btn arrow">Смотреть каталог</a>
+      </div>
+  </header>

@@ -1,0 +1,45 @@
+window.addEventListener('load', () => {
+    // Other JS
+
+    // loader
+    const $loader = document.querySelector('#loader')
+    setTimeout(() => {
+      $loader.classList.add('loaded')
+    }, 1000)
+    setTimeout(() => {
+      $loader.classList.add('closed')
+    }, 2500)
+
+    // cap
+
+    const $cap = document.querySelector('#cap')
+    window.addEventListener('scroll', e => {
+      const y = window.scrollY
+      if(y > 600) {
+        $cap.classList.add('scrolled')
+      } else {
+        $cap.classList.remove('scrolled')
+      }
+    })
+    const $selectBlocks = document.querySelectorAll('.select__list__block')
+    const $cursor = document.querySelector('#cursor')
+    let lastMouseX
+    let lastMouseY
+
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = lastMouseX = e.clientX;
+      const mouseY = lastMouseY = e.clientY;
+      requestAnimationFrame(() => {
+        let scale = 1
+        const isLink = e.target.nodeName == "A" || e.target.nodeName == "BUTTON" || e.target.nodeName == "INPUT" || e.target.parentNode.nodeName == "A"
+        scale = isLink ? 0.7 : 1
+        $cursor.style.backgroundColor = !isLink ? 'rgba(255,255,255,.3)' : 'transparent'
+        $cursor.style.borderColor = !isLink ? 'transparent' : 'rgba(0,0,0,.3)'
+        $cursor.style.opacity = 1
+        $cursor.style.transform = `translate(${mouseX-30}px, ${mouseY-30}px) scale(${scale})`
+      });
+    });
+    window.addEventListener('scroll', e => {
+      $cursor.style.opacity = 0
+    })
+})

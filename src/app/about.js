@@ -1,5 +1,5 @@
-import(/* webpackChunkName: "index.style" */'../style/index.scss')
-// import template from '../views/index.hbs';
+import(/* webpackChunkName: "about.style" */'../style/about.scss')
+// import template from '../views/about.hbs';
 
 // import image from '../img/first-screen.jpg'
 

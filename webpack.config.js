@@ -11,12 +11,15 @@ const devtool = devMode ? 'source-map' : undefined
 
 const pages = [
   {id: 'index', title: 'Главная'},
+  {id: 'about', title: 'О нас'},
 ]
 
-const pageEntries = pages.map(page => page.id).reduce((config, page) => {
-  config[page] = ['@babel/polyfill', path.resolve(__dirname, 'src', 'app', `${page}.js`)]
+const pageEntries = pages.map(page => page.id).reduce((config, pageId) => {
+  config[pageId] = ['@babel/polyfill', path.resolve(__dirname, 'src', 'app', `${pageId}.js`)]
   return config
 }, {})
+
+pageEntries['app'] = ['@babel/polyfill', path.resolve(__dirname, 'src', 'app', `app.js`)]
 
 module.exports = {
   mode,
@@ -28,19 +31,22 @@ module.exports = {
   },
   entry: pageEntries,
   optimization: {
+    // chunkIds: 'named',
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
+    runtimeChunk: 'single'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     filename: "[name].js",
-    assetModuleFilename: 'assets/[name][ext]'
+    // assetModuleFilename: 'assets/[name][ext]'
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      // filename: "[name].css",
+      // chunkFilename: "[name].css",
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -53,18 +59,32 @@ module.exports = {
   ]
   .concat(pages.map(page => (
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'views', `${page.id}.hbs`),
+      filename: `${page.id}.html`,
+      template: path.resolve(__dirname, 'src', `views/${page.id}.hbs`),
+      templateParameters:  Object.assign({
+        menu: [
+          {title: 'Каталог', link: 'catalog.html'},
+          {title: 'О нас', link: 'about.html'},
+          {title: 'Услуги центра', link: 'services.html'},
+          {title: 'Документы', link: 'documents.html'},
+          {title: 'Публикации', link: 'publications.html'},
+          {title: 'Новости', link: 'news.html'},
+        ]
+      }, page.data),
+      minify: false,
       title: `${page.title} | КубГАУ - Сайт микроорганизмов`,
-      filename: `${page.id}.html`
     })
-  ))),
-  module: {
+  ))), module: {
     rules: [
       {
-        test: /\.hbs$/,
+        test: /\.(handlebars|hbs)$/,
         use: [
           {
-            loader: 'handlebars-loader'
+            loader: 'handlebars-loader',
+            options: {
+              helperDirs: path.resolve(__dirname, 'src/helpers'),
+              partialDirs: path.resolve(__dirname, 'src/partials'),
+            }
           }
         ]
       },
@@ -75,12 +95,12 @@ module.exports = {
       {
         test: /\.(c|sc|sa)ss$/i,
         use: [
-          devMode == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-
+          // devMode == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              url: false
+              url: false,
             }
           },
           {
@@ -92,8 +112,15 @@ module.exports = {
             }
           },
           
-          'sass-loader',
-        ]
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                outputStyle: 'expanded'
+              }
+            }
+          },
+        ],
       },
       {
         test: /\.(?:js|mjs|cjs)$/,
@@ -107,13 +134,13 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[name].[ext]'
-        }
-      },
+      // {
+      //   test: /\.(woff|woff2|eot|ttf|otf)$/i,
+      //   type: 'asset/resource',
+      //   generator: {
+      //     filename: 'fonts/[name].[ext]'
+      //   }
+      // },
     ]
   }
 }

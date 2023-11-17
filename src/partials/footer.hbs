@@ -2,17 +2,14 @@
 <div class="container">
   <div class="footer_wrapper">
     <div class="footer__info">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo">
         <img src="assets/img/logo.svg" alt="">
       </a>
       <nav class="footer__info__nav">
         <ul>
-          <li><a href="#">Каталог</a></li>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Услуги центра</a></li>
-          <li><a href="#">Документы</a></li>
-          <li><a href="#">Публикации</a></li>
-          <li><a href="#">Новости</a></li>
+          {{#each menu}}
+            {{#with this}}<li><a href="{{link}}">{{title}}</a></li>{{/with}}
+          {{/each}}
         </ul>
       </nav>
     </div>
@@ -24,5 +21,3 @@
   </div>
 </div>
 </footer>
-</body>
-</html>

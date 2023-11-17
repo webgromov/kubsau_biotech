@@ -1,7 +1,13 @@
-{{> ../partials/header}}
-
+{{> header menu=menu }}
+<header id="scene" data-depth="0.2" class="header">
+  <div class="header__info">
+      <h1 class="header__title">Каталог микроорганизмов</h1>
+      <p class="header__desc">Программа приоритета 2030, совместно с КубГАУ</p>
+      <a href="" class="btn arrow">Смотреть каталог</a>
+    </div>
+</header>
 <section class="select" id="select">
-<h2 class="select__title">Пожалуйста, выберите каталог <br><span>чтобы продолжить</span></h2>
+<h2 class="select__title">Пожалуйста, выберите каталог <span>чтобы продолжить</span></h2>
 <div class="select__list">
   <div class="select__list__block">
     <a href="#">
@@ -17,4 +23,4 @@
   </div>
 </div>
 </section>
-{{> ../partials/footer}}
+{{> footer menu=menu}}

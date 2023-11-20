@@ -12,14 +12,23 @@ const devtool = devMode ? 'source-map' : undefined
 const pages = [
   {id: 'index', title: 'Главная'},
   {id: 'about', title: 'О нас'},
+  {id: 'catalog', title: 'Каталога'},
+  {id: 'catalog-list', title: 'Список бактерий'},
+  {id: 'bacteria', title: 'Бактерия'},
+  {id: 'services', title: 'Услуги центра'},
+  {id: 'documents', title: 'Документы'},
+  {id: 'publications', title: 'Публикации'},
+  {id: 'news', title: 'Новости'},
+  {id: 'contacts', title: 'Контакты'},
+  {id: '404', title: 'Ошибка'},
 ]
 
 const pageEntries = pages.map(page => page.id).reduce((config, pageId) => {
   config[pageId] = ['@babel/polyfill', path.resolve(__dirname, 'src', 'app', `${pageId}.js`)]
   return config
-}, {})
-
-pageEntries['app'] = ['@babel/polyfill', path.resolve(__dirname, 'src', 'app', `app.js`)]
+}, {
+  app: ['@babel/polyfill', path.resolve(__dirname, 'src', 'app', `app.js`)]
+})
 
 module.exports = {
   mode,
@@ -33,7 +42,7 @@ module.exports = {
   optimization: {
     // chunkIds: 'named',
     splitChunks: {
-      chunks: 'all',
+      chunks: 'async',
     },
     runtimeChunk: 'single'
   },
@@ -73,6 +82,7 @@ module.exports = {
       }, page.data),
       minify: false,
       title: `${page.title} | КубГАУ - Сайт микроорганизмов`,
+      chunks: ['app', page.id]
     })
   ))), module: {
     rules: [

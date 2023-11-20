@@ -1,3 +1,5 @@
+import(/* webpackChunkName: "app.style" */ '../style/app.scss')
+
 window.addEventListener('load', () => {
     // Other JS
 
@@ -13,9 +15,9 @@ window.addEventListener('load', () => {
     // cap
 
     const $cap = document.querySelector('#cap')
-    window.addEventListener('scroll', e => {
+    window.addEventListener('wheel', e => {
       const y = window.scrollY
-      if(y > 600) {
+      if(e.deltaY > 0) {
         $cap.classList.add('scrolled')
       } else {
         $cap.classList.remove('scrolled')

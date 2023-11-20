@@ -1,0 +1,53 @@
+@import 'core/base';
+
+.catalog {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  column-gap: 100px;
+  align-items: flex-start;
+  &__sidebar {
+    padding: 30px 20px;
+    border: 1px solid #DCDCDC;
+    border-radius: 10px;
+    h2 {
+      font-size: 23px;
+      margin-bottom: 30px;
+    }
+  }
+  &__form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    label {
+      .inp {
+        margin-top: 7px;
+      }
+    }
+
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    align-items: flex-start;
+    &__item {
+      a {
+        display: flex;
+        gap: 30px;
+        border: 1px solid #E6E6E6;
+        justify-content: space-between;
+        border-radius: 10px;
+        padding: 15px;
+        transition: .3s ease all;
+        &:hover {
+          background-color: $color-main;
+        }
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

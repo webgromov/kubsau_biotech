@@ -1,0 +1,57 @@
+.catalogList {
+  &__area {
+    &__bacteriaListList {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      li {
+        background: url(../assets/img/bacteriaList-background.jpg) no-repeat center / 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 40px 20px;
+        transition: .7s ease all;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,.8);
+        }
+        &:hover {
+          background-size: 120%;
+        }
+        a {
+          display: block;
+          position: relative;
+          .title {
+            color: white;
+            font-size: 16px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            span {
+              margin-left: 12px;
+              border-radius: 4px;
+              background: white;
+              color: #222;
+              font-size: 14px;
+              padding: 5px 15px;
+              display: inline-block;
+            }
+          }
+          .bottom {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 300;
+            color: #fff;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

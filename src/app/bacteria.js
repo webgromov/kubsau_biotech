@@ -1,1 +1,1 @@
-import(/* webpackChunkName: "about.style" */ '../style/about.scss')
+import(/* webpackChunkName: "bacteria.style" */ '../style/bacteria.scss')

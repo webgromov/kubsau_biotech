@@ -13,7 +13,8 @@ const pages = [
   {id: 'index', title: 'Главная'},
   {id: 'about', title: 'О нас'},
   {id: 'catalog', title: 'Каталога'},
-  {id: 'catalog-list', title: 'Список бактерий'},
+  {id: 'catalogList', title: 'Список бактерий'},
+  {id: 'bacteriaList', title: 'Список бактерий'},
   {id: 'bacteria', title: 'Бактерия'},
   {id: 'services', title: 'Услуги центра'},
   {id: 'documents', title: 'Документы'},
@@ -72,7 +73,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', `views/${page.id}.hbs`),
       templateParameters:  Object.assign({
         menu: [
-          {title: 'Каталог', link: 'catalog.html'},
+          {title: 'Каталог', link: '#select'},
           {title: 'О нас', link: 'about.html'},
           {title: 'Услуги центра', link: 'services.html'},
           {title: 'Документы', link: 'documents.html'},

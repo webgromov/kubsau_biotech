@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   list-style-type: none;
 }
@@ -345,6 +349,72 @@ body {
     .sign {
       color: $color-main;
       opacity: .05;
+    }
+  }
+}
+
+.catalog {
+  &__search {
+    max-width: 400px;
+    position: sticky;
+    top: 100px;
+    height: auto;
+    padding: 30px 20px;
+    border: 1px solid #DCDCDC;
+    border-radius: 10px;
+    &__header {
+      font-size: 26px;
+      padding-bottom: 30px;
+    }
+    &__area {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    label {
+      font-size: 21px;
+    }
+    input {
+      margin-top: 5px;
+      border-radius: 6px;
+    }
+  }
+}
+
+.catalogList {
+  padding-top: 20px;
+  &__area {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    &__list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 60px;
+      row-gap: 30px;
+      align-content: flex-start;
+      li {
+        a {
+          border: 1px solid #E6E6E6;
+          border-radius: 10px;
+          padding: 15px;
+          display: flex;
+          gap: 25px;
+          align-items: center;
+          justify-content: center;
+          transition: .3s ease all;
+          .title {
+            font-weight: normal;
+          }
+          .number {
+            font-weight: bold;
+          }
+          &:hover {
+            background: #DAFFCD;
+          }
+        }
+      }
     }
   }
 }

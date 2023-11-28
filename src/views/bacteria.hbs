@@ -1,2 +1,64 @@
-{{> header menu=menu}}
-{{> footer menu=menu}}
+{{> header classes='dark'}}
+<main class="page">
+  <section class="bacteriaList">
+    <div class="container">
+      {{> breadcrumbs}}
+      <section class="catalogList__area">
+        {{> catalogSearch}}
+        <div class="bacteriaArea">
+          <table>
+            <tr>
+              <td><strong>Вид</strong></td>
+              <td><strong>Acetobacter aceti</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Микроорганизмы</strong></td>
+              <td>Бактерии</td>
+            </tr>
+            <tr>
+              <td><strong>Род</strong></td>
+              <td>Acetobacter</td>
+            </tr>
+            <tr>
+              <td><strong>Наименование</strong></td>
+              <td>Aceti</td>
+            </tr>
+            <tr>
+              <td><strong>Номер реестра КубГАУ</strong></td>
+              <td>B-10228</td>
+            </tr>
+            <tr>
+              <td><strong>Авторы</strong></td>
+              <td>Копыльцов</td>
+            </tr>
+            <tr>
+              <td><strong>Имена синонимы</strong></td>
+              <td>Acetius, Acetobacter, Aminocis</td>
+            </tr>
+            <tr>
+              <td><strong>Родословная штамма и способ его получения</strong></td>
+              <td>из уксуса, полученного при сбраживании спирта</td>
+            </tr>
+            <tr>
+              <td><strong>Оптимальная температура роста</strong></td>
+              <td>от 25 до 50 градусов</td>
+            </tr>
+            <tr>
+              <td><strong>Применение</strong></td>
+              <td>продуцент уксусной кислоты</td>
+            </tr>
+            <tr>
+              <td><strong>Производимый продукт</strong></td>
+              <td>Apal</td>
+            </tr>
+            <tr>
+              <td><strong>Стоимость</strong></td>
+              <td>2 500 руб.</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+{{> footer}}

@@ -13,15 +13,15 @@ window.addEventListener('load', () => {
     }, 2500)
 
     // cap
-
     const $cap = document.querySelector('#cap')
     window.addEventListener('wheel', e => {
       const y = window.scrollY
-      if(e.deltaY > 0) {
-        $cap.classList.add('scrolled')
-      } else {
-        $cap.classList.remove('scrolled')
-      }
+      // $cap.classList.add('scrolled')
+      // if(e.deltaY > 0) {
+      //   $cap.classList.add('scrolled')
+      // } else {
+      //   $cap.classList.remove('scrolled')
+      // }
     })
     const $selectBlocks = document.querySelectorAll('.select__list__block')
     const $cursor = document.querySelector('#cursor')

@@ -1,0 +1,23 @@
+.bacteriaList {
+  .bacteriaArea {
+    width: 100%;
+    font-size: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    background: #F6F6F6;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      tr {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #e3eae3;
+        &:last-child {
+          border: none;
+        }
+      }
+      td {
+        padding: 20px;
+      }
+    }
+  }
+}

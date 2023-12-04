@@ -1,0 +1,35 @@
+@import 'core/base';
+
+.publications {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    &__item {
+      display: flex;
+      gap: 60px;
+      &__image {
+        width: 270px;
+        border-radius: 30px;
+        object-fit: cover;
+        height: 370px;
+      }
+      &__info {
+        color: #000;
+        .title {
+          font-size: 32px;
+        }
+        .date {
+          margin: 10px 0;
+          padding: 5px 10px;
+          text-align: center;
+          border-radius: 5px;
+          background: #000;
+          color: #fff;
+          font-weight: bold;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

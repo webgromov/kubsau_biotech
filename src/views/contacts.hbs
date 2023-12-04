@@ -1,2 +1,52 @@
-{{> header menu=menu}}
-{{> footer menu=menu}}
+{{>header classes='dark'}}
+<div class="page">
+  <div class="container">
+    {{> breadcrumbs}}
+    <section class="contacts">
+      <div class="contacts__infosection">
+        <p class="contacts__infoblock"><strong>Адрес:</strong> 117545 Россия, Москва, 1-й Дорожный проезд, д. 1</p>
+        <p class="contacts__infoblock"><strong>Телефон:</strong> <a href="tel:+79531042200">+7 953 104 22 00</a></p>
+        <p class="contacts__infoblock"><strong>Почта:</strong> <a href="mailto:info@kubsau.ru">info@kubsau.ru</a></p>
+      </div>
+
+      <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A0d8910eced0dbfdcd52c554e9a1bdfe42f2dc248ea646ac672f69db3dd2446ef&amp;source=constructor" width="100%" height="500" frameborder="0"></iframe>
+
+      <table class="contacts__requisites">
+        <tr>
+          <th>Наименование компании</th>
+          <td>ООО "Пример"</td>
+        </tr>
+        <tr>
+          <th>Юридический адрес</th>
+          <td>г. Москва, ул. Примерная, д. 123</td>
+        </tr>
+        <tr>
+          <th>ИНН</th>
+          <td>1234567890</td>
+        </tr>
+        <tr>
+          <th>КПП</th>
+          <td>987654321</td>
+        </tr>
+        <tr>
+          <th>Расчетный счет</th>
+          <td>12345678901234567890 в ОАО "Банк"</td>
+        </tr>
+        <tr>
+          <th>БИК</th>
+          <td>012345678</td>
+        </tr>
+        <tr>
+          <th>Корреспондентский счет</th>
+          <td>98765432109876543210</td>
+        </tr>
+        <tr>
+          <th>ОГРН</th>
+          <td>1234567890123</td>
+        </tr>
+        <!-- Можно добавить другие реквизиты по желанию -->
+      </table>
+    </section>
+  </div>
+</section>
+{{> footer}}

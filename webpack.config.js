@@ -20,6 +20,7 @@ const pages = [
   {id: 'documents', title: 'Документы'},
   {id: 'publications', title: 'Публикации'},
   {id: 'news', title: 'Новости'},
+  {id: 'article', title: 'Новость'},
   {id: 'contacts', title: 'Контакты'},
   {id: '404', title: 'Ошибка'},
 ]
@@ -79,6 +80,7 @@ module.exports = {
           {title: 'Документы', link: 'documents.html'},
           {title: 'Публикации', link: 'publications.html'},
           {title: 'Новости', link: 'news.html'},
+          {title: 'Контакты', link: 'contacts.html'},
         ]
       }, page.data),
       minify: false,

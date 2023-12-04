@@ -1,1 +1,51 @@
 @import 'core/base';
+
+@import 'core/base';
+
+.services {
+  &__blocks {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(300px, auto) auto;
+    gap: 45px;
+  }
+  &__block {
+    border: 1px solid #D2D2D2;
+    border-radius: 15px;
+    background-color: #D2D2D2;
+    padding: 30px;
+    color: #000;
+    grid-column: span 4;
+    transition: ease all .3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:first-child {
+      background-color: #B0FFAE;
+      grid-column: span 5;
+    }
+    &:nth-child(2) {
+      background-color: #AEFFEC;
+      grid-column: span 7;
+    }
+    &__title {
+      font-size: 24px;
+      margin-bottom: 25px;
+      position: relative;
+      padding-right: 55px;
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        background: url(assets/img/arrow-enter.svg) no-repeat center / contain;
+        width: 20px;
+        height: 20px;
+        transform: translate(-100%, -50%);
+      }
+    }
+    &__desc {
+      font-size: 18px;
+    }
+  }
+}

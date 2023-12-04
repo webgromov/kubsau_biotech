@@ -1,0 +1,44 @@
+@import 'core/base';
+
+.documents {
+  &__title {
+    font-size: #222;
+    font-size: 50px;
+    font-weight: 400;
+    margin: 40px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    &__item {
+      background: #EAFFFF;
+      padding: 30px;
+      border: 1px solid #D2D2D2;
+      border-radius: 15px;
+      color: #000;
+      transition: ease all .3s;
+      &:hover {
+        transform: scale(1.03);
+      }
+      h3 {
+        font-size: 22px;
+        position: relative;
+        padding-right: 55px;
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          background: url(assets/img/document.svg) no-repeat center / contain;
+          width: 40px;
+          height: 40px;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+}

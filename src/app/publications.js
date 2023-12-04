@@ -1,1 +1,1 @@
-import(/* webpackChunkName: "about.style" */ '../style/about.scss')
+import(/* webpackChunkName: "publications.style" */ '../style/publications.scss')

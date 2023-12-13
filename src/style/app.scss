@@ -307,7 +307,7 @@ body {
   transition: opacity ease .8s;
   .loader__logo {
     img {
-      width: clamp(170px, 40vw, 400px);
+      width: clamp(170px, 70vw, 400px);
     }
   }
   &.loaded {
@@ -474,6 +474,7 @@ body {
       padding: 30px 20px;
       display: flex;
       border-radius: inherit;
+      gap: 15px;
       justify-content: space-between;
       align-items: center;
       h2 {
@@ -485,6 +486,7 @@ body {
         padding: 10px;
         background: #000;
         color: #fff;
+        font-size: 13px;
         border-radius: 5px;
       }
     }
@@ -695,7 +697,7 @@ body {
       &__title {
         background: $color-main;
         h2 {
-          font-size: 20px;
+          font-size: 18px;
         }
         span {
           display: block;

@@ -12,8 +12,7 @@ const devtool = devMode ? 'source-map' : undefined
 const pages = [
   {id: 'index', title: 'Главная'},
   {id: 'about', title: 'О нас'},
-  {id: 'catalog', title: 'Каталога'},
-  {id: 'catalogList', title: 'Список бактерий'},
+  {id: 'catalog', title: 'Каталог'},
   {id: 'bacteriaList', title: 'Список бактерий'},
   {id: 'bacteria', title: 'Бактерия'},
   {id: 'services', title: 'Услуги центра'},

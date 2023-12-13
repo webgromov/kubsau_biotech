@@ -1,1 +1,0 @@
-import(/* webpackChunkName: "catalogList.style" */ '../style/catalogList.scss')

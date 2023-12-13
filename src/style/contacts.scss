@@ -20,9 +20,20 @@
   table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    font-size: clamp(10px, 3vw, 20px);
   }
   th, td {
     padding: 20px;
     width: 50%;
+  }
+}
+@media(max-width: 600px) {
+  .contacts {
+    &__map {
+      height: 350px;
+    }
+    th, td {
+      padding: 10px;
+    }
   }
 }

@@ -13,17 +13,27 @@
   </div>
 </div>
 <div id="cursor" class="cursor"></div>
+
+<div class="cap__nav__menu_mobile" id="mobile_menu">
+  <div class="close_btn" id="close_btn"></div>
+  <ul>
+    {{#each menu}}
+      {{#with this}}<li><a href="{{link}}">{{title}}</a></li>{{/with}}
+    {{/each}}
+  </ul>      
+</div>
 <section class="cap scrolled {{classes}}" id="cap">
     <nav id="cap__nav" class="cap__nav">
       <a href="index.html" class="logo">
         <img src="assets/img/logo.svg" alt="">
       </a>
-        <ul>
+        <ul class="cap__nav__menu" id="menu">
           {{#each menu}}
             {{#with this}}<li><a href="{{link}}">{{title}}</a></li>{{/with}}
           {{/each}}
         </ul>
-      <div class="cap__nav__search">
+        <div class="cap__nav__trigger" id="mobile_menu_trigger"><span></span></div>
+      <div class="cap__nav__search" id="searchInput">
         <img class="search-icon" src="assets/img/search.svg" class="search__icon" alt="">
         <input class="inp" placeholder="Поиск по сайту" type="search">
       </div>

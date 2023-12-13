@@ -3,6 +3,7 @@
 @import 'core/base';
 
 .services {
+  margin-bottom: 60px;
   &__blocks {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -12,14 +13,11 @@
   &__block {
     border: 1px solid #D2D2D2;
     border-radius: 15px;
-    background-color: #D2D2D2;
+    background-color: lighten(#D2D2D2, 15%);
     padding: 30px;
     color: #000;
     grid-column: span 4;
     transition: ease all .3s;
-    &:hover {
-      transform: scale(1.05);
-    }
     &:first-child {
       background-color: #B0FFAE;
       grid-column: span 5;
@@ -29,7 +27,7 @@
       grid-column: span 7;
     }
     &__title {
-      font-size: 24px;
+      font-size: clamp(16px, 2vw, 24px);
       margin-bottom: 25px;
       position: relative;
       padding-right: 55px;
@@ -45,7 +43,36 @@
       }
     }
     &__desc {
-      font-size: 18px;
+      font-size: clamp(13px, 1.8vw, 18px);
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .services {
+    &__blocks {
+      gap: 15px;
+    }
+    &__block {
+      grid-column: span 6!important;
+    }
+  }
+}
+@media (max-width: 650px) {
+  .services {
+    margin-bottom: 20px;
+    &__block {
+      grid-column: span 12!important;
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .services {
+    &__block {
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 }

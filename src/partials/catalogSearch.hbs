@@ -1,10 +1,12 @@
-<div class="catalog__search">
-  <h1 class="catalog__search__header">Поиск по каталогу</h1>
-  <div class="catalog__search__area">
-    <label>Род: <br> <input type="text" name="kind" class="inp"></label>
-    <label>Вид: <br> <input type="text" name="view" class="inp"></label>
-    <label>Номер ВКПМ: <br> <input name="vkpm" type="text" class="inp"></label>
-    <label>Поиск по производимому продукту и применению: <br> <input name="product" type="text" class="inp"></label>
-    <button class="btn" type="submit">Поиск</button>
+<div class="catalog__sidebar">
+    <div class="catalog__sidebar__title" id="catalog-sidebar-title"><h2>Поиск по каталогу</h2><span id="sidebar-toggler">Развернуть</span></div>
+    <form action="javascript:void(0)" class="catalog__form" id="catalog-form">
+      <div class="catalog__form__overlay">
+        <label>Род <input class="inp" type="text"></label>
+        <label>Вид <input class="inp" type="text"></label>
+        <label>Номер ВКПМ <input class="inp" type="text"></label>
+        <label>Поиск по производимому продукту <input class="inp" type="text"></label>
+        <input type="submit" class="btn btn-submit" value="Поиск">
+      </div>
+    </form>
   </div>
-</div>

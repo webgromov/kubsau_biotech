@@ -3,7 +3,7 @@
 .documents {
   &__title {
     font-size: #222;
-    font-size: 50px;
+    font-size: clamp(25px, 4vw, 50px);
     font-weight: 400;
     margin: 40px 0;
     &:first-child {
@@ -21,11 +21,8 @@
       border-radius: 15px;
       color: #000;
       transition: ease all .3s;
-      &:hover {
-        transform: scale(1.03);
-      }
       h3 {
-        font-size: 22px;
+        font-size: clamp(15px, 3vw, 22px);
         position: relative;
         padding-right: 55px;
         &::after {
@@ -37,6 +34,45 @@
           width: 40px;
           height: 40px;
           transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  .documents {
+    &__list {
+      grid-template-columns: auto;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .documents {
+    &__list {
+      &__item {
+        h3 {
+          padding-right: 35px;
+          &::after {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .documents {
+    &__list {
+      &__item {
+        &:hover {
+          transform: scale(1.03);
         }
       }
     }

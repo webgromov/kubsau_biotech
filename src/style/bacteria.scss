@@ -3,8 +3,10 @@
 .bacteriaList {
   .bacteriaArea {
     width: 100%;
-    font-size: 20px;
-    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: clamp(12px, 2.3vw, 20px);
+    padding: 20px;
     border-radius: 10px;
     background: #F6F6F6;
     table {
@@ -19,6 +21,17 @@
       }
       td {
         padding: 20px;
+      }
+    }
+  }
+}
+
+@media(max-width: 800px) {
+  .bacteriaList {
+    .bacteriaArea {
+      padding: 5px;
+      table td {
+        padding: 10px;
       }
     }
   }
